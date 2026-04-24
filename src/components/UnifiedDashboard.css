@@ -1,0 +1,283 @@
+.unified-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* TỔNG QUAN */
+.overview-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.central-dial {
+    transform: scale(1.1);
+}
+
+/* BIỂU ĐỒ TUẦN (RECHARTS) */
+.section-charts {
+    display: flex;
+    flex-direction: column;
+}
+
+.charts-card {
+    padding: 2rem;
+}
+
+.charts-filter {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.skeuo-select {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.skeuo-select:focus {
+    box-shadow: inset 6px 6px 12px var(--shadow-dark),
+        inset -6px -6px 12px var(--shadow-light);
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.chart-box {
+    background: var(--bg-color);
+    padding: 1.5rem 1rem 0.5rem 0;
+    border-radius: 15px;
+    box-shadow: 6px 6px 12px var(--shadow-dark),
+        -6px -6px 12px var(--shadow-light);
+}
+
+.chart-title {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* BẢNG CHI TIẾT NGANG (HORIZONTAL TABLE) */
+.horizontal-table-card {
+    padding: 1.5rem;
+}
+
+/* Thay đổi grid: 1.5fr (Tên) - 2fr (Vận động) - 2fr (Ngủ) - 2fr (Calo) - 1.5fr (Tim) */
+.table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 2fr 1.5fr;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1rem;
+}
+
+.th-cell {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr 2fr 1.5fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.table-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.member-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.bar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.bar-bg {
+    flex: 1;
+    height: 18px;
+    background: var(--bg-pressed);
+    border-radius: 10px;
+    box-shadow: var(--shadow-inset);
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.steps-bar {
+    background: linear-gradient(90deg, #9ae6b4, #81e6d9);
+}
+
+.sleep-bar {
+    background: linear-gradient(90deg, #d6bcfa, #fbb6ce);
+}
+
+.calories-bar {
+    background: linear-gradient(90deg, #fbd38d, #f6ad55);
+}
+
+.bar-value {
+    width: 60px;
+    text-align: right;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.heart-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heart-icon {
+    font-size: 1.2rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fc8181;
+    text-shadow: 0 0 10px rgba(252, 129, 129, 0.5);
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.2);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* PHÍA DƯỚI */
+.section-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* THUỐC */
+.meds-list-unified {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+}
+
+.med-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+}
+
+.med-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.med-owner {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.med-name {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}

@@ -1,0 +1,32 @@
+.skeuo-button {
+    background: var(--bg-color);
+    color: var(--accent-color);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    /* Raised shadow for tactile feel */
+    box-shadow: 6px 6px 12px var(--shadow-dark),
+        -6px -6px 12px var(--shadow-light);
+    transition: all 0.1s ease;
+    user-select: none;
+}
+
+.skeuo-button.depressed {
+    /* Clicked/pressed in logic */
+    box-shadow: inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+    color: var(--text-color);
+    transform: scale(0.98);
+}
+
+.skeuo-button .icon {
+    font-size: 1.2rem;
+}

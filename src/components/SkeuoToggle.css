@@ -1,0 +1,57 @@
+.skeuo-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    user-select: none;
+}
+
+.toggle-label {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.skeuo-toggle {
+    width: 60px;
+    height: 30px;
+    background: var(--bg-color);
+    border-radius: 15px;
+    position: relative;
+
+    /* Track inset shadow */
+    box-shadow: inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+    transition: background 0.3s ease;
+}
+
+.skeuo-toggle.active {
+    /* Let it glow when active, keeping inset shadow intact by using box-shadow layering */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1),
+        inset -3px -3px 6px rgba(144, 205, 244, 0.4);
+    background: rgba(144, 205, 244, 0.15);
+    /* Slight tint for active */
+}
+
+.skeuo-toggle .toggle-switch {
+    width: 26px;
+    height: 26px;
+    background: var(--bg-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    /* Raised switch */
+    box-shadow: 2px 2px 5px var(--shadow-dark),
+        -2px -2px 5px var(--shadow-light);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skeuo-toggle.active .toggle-switch {
+    transform: translateX(30px);
+    background: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-glow),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+        2px 2px 5px var(--shadow-dark);
+}

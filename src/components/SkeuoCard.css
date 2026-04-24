@@ -1,0 +1,16 @@
+.skeuo-card {
+    background: var(--bg-color);
+    border-radius: 20px;
+    padding: 1.5rem;
+    /* Raised Neuromorphic shadow */
+    box-shadow: 8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.skeuo-card.pressed {
+    /* Inset Neuromorphic shadow */
+    box-shadow: inset 6px 6px 12px var(--shadow-dark),
+        inset -6px -6px 12px var(--shadow-light);
+}

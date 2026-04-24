@@ -1,0 +1,87 @@
+.alert-banner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.alert-banner {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background: var(--bg-color);
+    /* Indented look for warning panel */
+    box-shadow: inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.alert-banner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.alert-banner.alert-sleep::before {
+    background: #b784ff;
+}
+
+.alert-banner.alert-activity::before {
+    background: var(--alert-color);
+}
+
+.alert-icon {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Raised button for icon */
+    box-shadow: 4px 4px 8px var(--shadow-dark),
+        -4px -4px 8px var(--shadow-light);
+}
+
+.icon-inner {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px rgba(255, 59, 59, 0.5));
+}
+
+.alert-sleep .icon-inner {
+    filter: drop-shadow(0 0 5px rgba(183, 132, 255, 0.5));
+}
+
+.alert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.alert-title {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.alert-activity .alert-title {
+    color: var(--alert-color);
+}
+
+.alert-sleep .alert-title {
+    color: #b784ff;
+}
+
+.alert-msg {
+    font-size: 0.9rem;
+    color: #bbb;
+}

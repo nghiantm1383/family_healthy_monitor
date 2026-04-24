@@ -1,0 +1,56 @@
+.skeuo-dial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.skeuo-dial-svg {
+    transform: rotate(-90deg);
+    border-radius: 50%;
+    background: var(--bg-color);
+    /* Subtle inset to simulate a carved out track space */
+    box-shadow: inset 5px 5px 10px var(--shadow-dark),
+        inset -5px -5px 10px var(--shadow-light);
+}
+
+.dial-track {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.2);
+}
+
+.dial-progress {
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-out;
+}
+
+.dial-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: -15px;
+    /* Adjust for label at bottom */
+}
+
+.dial-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+.dial-unit {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.dial-label {
+    margin-top: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #aaa;
+}
